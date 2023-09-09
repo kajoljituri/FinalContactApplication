@@ -1,9 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewContact">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="Add new contact"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:id="@+id/heading"
+        android:background="#A1DDF6">
+
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:backgroundTint="#A1DDF6"
+        android:layout_marginTop="15dp">
+
+    </ImageButton>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/heading"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter the following details to create a new contact"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="23dp"
+        android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp">
+
+    </TextView>
+        <EditText
+            android:id="@+id/entername"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle"
+            android:layout_margin="10dp">
+
+        </EditText>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textSize="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp">
+
+        </TextView>
+        <EditText
+            android:id="@+id/enterphone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle"
+            android:layout_margin="10dp">
+
+        </EditText>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Circle "
+            android:textSize="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp">
+
+        </TextView>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle"
+            android:layout_margin="10dp">
+
+        </Spinner>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nickname"
+            android:textSize="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/enternick"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle"
+            android:layout_margin="10dp">
+
+        </EditText>
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

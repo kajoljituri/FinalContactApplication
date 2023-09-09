@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FinalContactApp"
         tools:targetApi="31">
         <activity
+            android:name=".SendMessage"
+            android:exported="false" />
+        <activity
             android:name=".ContactProfile"
             android:exported="false" />
         <activity
