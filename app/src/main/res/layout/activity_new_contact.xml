@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".NewContact">
 
     <TextView
@@ -11,6 +11,7 @@
         android:layout_height="75dp"
         android:text="Add new contact"
         android:textSize="30dp"
+        android:textColor="@color/black"
         android:gravity="center"
         android:id="@+id/heading"
         android:background="#A1DDF6">
@@ -35,94 +36,102 @@
         android:layout_marginTop="10dp">
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter the following details to create a new contact"
-            android:textSize="20dp">
+            android:textSize="25dp"
+            android:layout_marginStart="6dp">
 
         </TextView>
 
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="23dp"
-        android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp">
 
-    </TextView>
-        <EditText
-            android:id="@+id/entername"
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/rectangle"
-            android:layout_margin="10dp">
-
-        </EditText>
-
-        <TextView
-
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Number"
-            android:textSize="23dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp">
+            android:hint="Name"
+            app:startIconDrawable="@drawable/baseline_person_outline_24"
+            android:layout_marginTop="20dp"
+            android:layout_margin="20dp">
 
-        </TextView>
-        <EditText
-            android:id="@+id/enterphone"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/rectangle"
-            android:layout_margin="10dp">
-
-        </EditText>
-        <TextView
-
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Circle "
-            android:textSize="23dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp">
+            android:hint="Phone Number"
+            android:layout_margin="20dp"
+            app:startIconDrawable="@drawable/baseline_call_24">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number">
 
-        </TextView>
+            </com.google.android.material.textfield.TextInputEditText>
 
-        <Spinner
-            android:id="@+id/spinner"
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/rectangle"
-            android:layout_margin="10dp">
-
-        </Spinner>
-
-        <TextView
-
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nickname"
-            android:textSize="23dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp">
+            android:hint="Nickname"
+            android:inputType="number"
+            android:layout_margin="20dp"
+            app:startIconDrawable="@drawable/baseline_person_outline_24">
 
-        </TextView>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/enternick"
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/rectangle"
-            android:layout_margin="10dp">
+            android:layout_height="wrap_content"
+            android:hint="Circle"
+            app:hintTextColor="@color/black"
+            android:orientation="horizontal"
+            android:layout_margin="20dp">
 
-        </EditText>
 
+            <AutoCompleteTextView
+                android:id="@+id/circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:inputType="none"/>
 
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/savebtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textSize="20dp"
+            android:layout_marginTop="210dp"
+            android:padding="10dp"
+            android:layout_gravity="bottom">
+
+        </Button>
 
 
     </LinearLayout>
-
-
 
 </RelativeLayout>

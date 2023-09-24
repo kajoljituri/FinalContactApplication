@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">FinalContactApp</string>
         <string-array name="circle_array">
-            <item>Mercury</item>
-            <item>Venus</item>
-            <item>Earth</item>
-            <item>Mars</item>
-            <item>Jupiter</item>
-            <item>Saturn</item>
-            <item>Uranus</item>
-            <item>Neptune</item>
+
+            <item>Circle 1</item>
+            <item>Circle 2</item>
+            <item>Circle 3</item>
+
         </string-array>
     </resources>

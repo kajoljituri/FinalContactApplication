@@ -1,15 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/abc" />
+        android:id="@+id/dd"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#A1DDF6"
+        android:gravity="center"
+        android:text="Contacts"
+        android:textColor="@color/black"
+        android:textSize="30dp">
 
-</LinearLayout>
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/addbtn"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_alignEnd="@+id/dd"
+        android:src="@drawable/baseline_person_add_alt_24"
+        android:background="#A1DDF6"
+        android:contentDescription="addcontact">
+
+    </ImageButton>
+    
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerview"
+        android:layout_below="@+id/dd">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="740dp"
+            android:src="@drawable/baseline_message_24"
+            android:contentDescription="sendmsg"
+
+            >
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        
+
+
+
+
+</RelativeLayout>
