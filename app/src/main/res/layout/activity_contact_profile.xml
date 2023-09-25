@@ -1,9 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ContactProfile">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/heading"
+        android:background="#A1DDF6">
+
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:backgroundTint="#A1DDF6"
+        android:layout_marginTop="15dp"
+        android:contentDescription="goback">
+
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/editbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/heading"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#A1DDF6"
+        android:contentDescription="goback"
+        android:src="@drawable/baseline_edit_24">
+
+
+    </ImageButton>
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginStart="200dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_person_outline_24">
+
+        </ImageView>
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="contact name"
+        android:textSize="25dp"
+        android:layout_below="@+id/heading"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="135dp"
+        android:gravity="center">
+
+    </TextView>
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="number"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_below="@+id/name"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="5dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/circle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="circle"
+        android:textSize="25dp"
+        android:layout_below="@+id/number"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:background="@drawable/rectangle">
+
+    </TextView>
+</RelativeLayout>

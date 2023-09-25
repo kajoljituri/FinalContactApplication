@@ -1,11 +1,11 @@
 package com.example.finalcontactapp;
 
 public class Contact {
+
     String name,nickname,circle;
     int phoneNumber;
 
-    public Contact(){
-
+    public Contact() {
     }
 
     public Contact(String name, String nickname, String circle, int phoneNumber) {
@@ -16,7 +16,9 @@ public class Contact {
 
     }
 
+
     public String getName() {
+
         return name;
     }
 

@@ -59,6 +59,7 @@ public class NewContact extends AppCompatActivity {
                 int Phonenum =Integer.parseInt(phone.getText().toString());
 
                 Contact contact = new Contact(Name,Nickname,Circle,Phonenum);
+
                 dbreference.push().setValue(contact);
 
                 Toast.makeText(NewContact.this, " values inserted", Toast.LENGTH_SHORT).show();
