@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:text="Add new contact"
+        android:text="Update Contact"
         android:textSize="30dp"
         android:textColor="@color/black"
         android:gravity="center"
@@ -25,27 +25,17 @@
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_arrow_back_24"
         android:backgroundTint="#A1DDF6"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        android:contentDescription="goes back mainpg">
 
     </ImageButton>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_below="@+id/heading"
         android:layout_marginTop="10dp">
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter the following details to create a new contact"
-            android:textSize="25dp"
-            android:layout_marginStart="6dp">
-
-        </TextView>
-
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -57,7 +47,7 @@
             android:layout_margin="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
+                android:id="@+id/name1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -72,7 +62,7 @@
             android:layout_margin="20dp"
             app:startIconDrawable="@drawable/baseline_call_24">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phone"
+                android:id="@+id/phone1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number">
@@ -90,7 +80,7 @@
             app:startIconDrawable="@drawable/baseline_person_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nickname"
+                android:id="@+id/nickname1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -112,7 +102,7 @@
 
 
             <AutoCompleteTextView
-                android:id="@+id/circle"
+                android:id="@+id/circle1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -120,19 +110,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/savebtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:textSize="20dp"
-            android:layout_marginTop="210dp"
-            android:padding="10dp"
-            android:layout_gravity="bottom">
 
-        </Button>
 
 
     </LinearLayout>
+    <Button
+        android:id="@+id/updatebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp">
+
+    </Button>
 
 </RelativeLayout>

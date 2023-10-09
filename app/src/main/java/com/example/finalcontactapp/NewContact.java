@@ -3,6 +3,7 @@ package com.example.finalcontactapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,9 +23,10 @@ public class NewContact extends AppCompatActivity {
     AutoCompleteTextView circle;
     ImageButton backbtn;
     Button savebtn;
-    //Spinner spinner;
+    private DBManager dbManager;
 
-    DatabaseReference dbreference;
+    //DatabaseReference dbreference;
+
 
 
     @Override
@@ -36,6 +38,7 @@ public class NewContact extends AppCompatActivity {
         phone =(TextInputEditText) findViewById(R.id.phone);
         nickname=(TextInputEditText) findViewById(R.id.nickname);
 
+
         circle =(AutoCompleteTextView)findViewById(R.id.circle);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
                 (this,R.array.circle_array,android.R.layout.simple_spinner_item);
@@ -45,7 +48,12 @@ public class NewContact extends AppCompatActivity {
         backbtn=(ImageButton) findViewById(R.id.backbtn);
         savebtn= (Button) findViewById(R.id.savebtn);
 
-        dbreference = FirebaseDatabase.getInstance().getReference().child("Contact");
+        dbManager = new DBManager(this);
+        dbManager.open();
+
+
+
+//        dbreference = FirebaseDatabase.getInstance().getReference().child("Contact");
 
 
         savebtn.setOnClickListener(new View.OnClickListener() {
@@ -53,16 +61,12 @@ public class NewContact extends AppCompatActivity {
             public void onClick(View view) {
                 String Name = name.getText().toString();
                 String Nickname =nickname.getText().toString();
-                String Circle = circle.getText().toString();
-                //String Circle = circle.getSelectedItem().toString();
-
-                int Phonenum =Integer.parseInt(phone.getText().toString());
-
+                String Circle =circle.getText().toString();
+                String Phonenum =  phone.getText().toString();
                 Contact contact = new Contact(Name,Nickname,Circle,Phonenum);
-
-                dbreference.push().setValue(contact);
-
-                Toast.makeText(NewContact.this, " values inserted", Toast.LENGTH_SHORT).show();
+                //dbreference.push().setValue(contact);
+                dbManager.insert(contact);
+                Toast.makeText(NewContact.this, "values inserted", Toast.LENGTH_SHORT).show();
 
                 Intent savegoback = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(savegoback);
@@ -72,22 +76,7 @@ public class NewContact extends AppCompatActivity {
 
 
 
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
-//                (this,R.array.circle_array,android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-//        circle.setAdapter(adapter);
-//        circle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                String data=adapterView.getItemAtPosition(i).toString();
-//                Toast.makeText(getApplicationContext(),data,Toast.LENGTH_LONG).show();
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
 //
-//            }
-//        });
-
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
