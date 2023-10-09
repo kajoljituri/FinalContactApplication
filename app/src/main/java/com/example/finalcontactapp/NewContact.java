@@ -51,8 +51,6 @@ public class NewContact extends AppCompatActivity {
         dbManager = new DBManager(this);
         dbManager.open();
 
-
-
 //        dbreference = FirebaseDatabase.getInstance().getReference().child("Contact");
 
 
@@ -76,7 +74,6 @@ public class NewContact extends AppCompatActivity {
 
 
 
-//
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

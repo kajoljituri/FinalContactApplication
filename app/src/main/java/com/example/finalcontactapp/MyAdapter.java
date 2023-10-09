@@ -69,9 +69,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
                 //intent.putExtra("Initial",initials);
                 intent.putExtra("circle",contact.getCircle());
                 intent.putExtra("nickname",contact.getnickname());
-
+               // intent.putExtra("id",contact.getId());
 
                 view.getContext().startActivity(intent);
+
+            }
+        });
+        holder.NameDisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent updateIntent = new Intent(view.getContext(),UpdateContact.class);
+                //intent.putExtra("imageview",contact.getPhoto());
+                //String initials= String.valueOf(contact.getName().charAt(0));
+                updateIntent.putExtra("name",contact.getName());
+                updateIntent.putExtra("phno",contact.getPhoneNumber());
+                //intent.putExtra("Initial",initials);
+                updateIntent.putExtra("circle",contact.getCircle());
+                updateIntent.putExtra("nickname",contact.getnickname());
+                updateIntent.putExtra("id",contact.getId());
+
+                view.getContext().startActivity(updateIntent);
 
             }
         });

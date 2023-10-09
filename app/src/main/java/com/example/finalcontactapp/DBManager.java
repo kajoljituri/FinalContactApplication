@@ -47,15 +47,15 @@ public class DBManager {
         return cursorVar;
     }
 
-    public int updateTable(long ID, String name, String phnum,String nickname,String circle) {
+    public int updateTable(long id, String name, String phnum,String nickname,String circle) {
         ContentValues contentValuesVar = new ContentValues();
         contentValuesVar.put(DatabaseHelper.NAME, name);
         contentValuesVar.put(DatabaseHelper.PHONENUMBER, phnum);
         contentValuesVar.put(DatabaseHelper.NICKNAME, nickname);
         contentValuesVar.put(DatabaseHelper.CIRCLE, circle);
-        contentValuesVar.put(DatabaseHelper.ID,ID);
+        contentValuesVar.put(DatabaseHelper.ID,id);
 
-        int i = database.update(DatabaseHelper.TABLE_NAME, contentValuesVar, DatabaseHelper.ID + " = " + ID, null);
+        int i = database.update(DatabaseHelper.TABLE_NAME, contentValuesVar, DatabaseHelper.ID + " = " + id, null);
         return i;
     }
 

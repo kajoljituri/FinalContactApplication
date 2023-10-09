@@ -29,6 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " TEXT NOT NULL, "+ PHONENUMBER + " TEXT NOT NULL," + CIRCLE + " TEXT NOT NULL);";
 
     public DatabaseHelper(Context context) {
+
         super(context, DB_NAME, null, DB_VERSION);
     }
 

@@ -67,8 +67,7 @@ public class UpdateContact extends AppCompatActivity {
         String newname = intent.getStringExtra("name");
         // display the string into textView
         name1.setText(newname);
-
-        String newphone = intent.getStringExtra("phonenum");
+        String newphone = intent.getStringExtra("phno");
         phone1.setText(newphone);
 
         String newcircle = intent.getStringExtra("circle");
@@ -76,7 +75,7 @@ public class UpdateContact extends AppCompatActivity {
 
         String newnickname = intent.getStringExtra("nickname");
         nickname1.setText(newnickname);
-        long ID= intent.getLongExtra("id",1);
+        long ID = intent.getLongExtra("id",1);
  //       Log.v("TAG12345", String.valueOf(ID));
 
 
@@ -87,6 +86,7 @@ public class UpdateContact extends AppCompatActivity {
                 startActivity(back);
             }
         });
+
 
         updatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,9 +128,8 @@ public class UpdateContact extends AppCompatActivity {
                 String phNum = phone1.getText().toString();
                 String circle = circle1.getText().toString();
 
-
                 Contact contact = new Contact(name,phNum, nickname, circle);
-               // dbManager.updateTable(contact.getId(), contact.getName(), contact.getnickname(), contact.getCircle(), contact.getPhoneNumber());
+                // dbManager.updateTable(contact.getId(), contact.getName(), contact.getnickname(), contact.getCircle(), contact.getPhoneNumber());
                 dbManager.updateTable(ID,name,phNum,nickname,circle);
                 Log.v("TAG123", dbManager.toString());
                 Log.v("Tag789", String.valueOf(ID));

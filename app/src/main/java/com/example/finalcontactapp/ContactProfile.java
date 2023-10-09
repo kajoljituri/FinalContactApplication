@@ -55,6 +55,8 @@ public class ContactProfile extends AppCompatActivity {
 //        ph = getIntent().getExtras().getInt("phno");
 //        phoneNum.setText(Long.toString(ph));
 
+
+
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,8 +70,6 @@ public class ContactProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent update = new Intent(view.getContext(),UpdateContact.class);
-
-
                 String nicknm =getIntent().getExtras().getString("nickname");
                 update.putExtra("nickname",nicknm);
 
@@ -82,7 +82,8 @@ public class ContactProfile extends AppCompatActivity {
                 String number =getIntent().getExtras().getString("phno");
                 update.putExtra("phonenum",number);
 
-
+                long id =getIntent().getLongExtra("id",1);
+                update.putExtra("id",id);
 
                 view.getContext().startActivity(update);
 
