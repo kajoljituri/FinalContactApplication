@@ -55,8 +55,6 @@ public class ContactProfile extends AppCompatActivity {
 //        ph = getIntent().getExtras().getInt("phno");
 //        phoneNum.setText(Long.toString(ph));
 
-
-
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

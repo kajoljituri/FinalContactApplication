@@ -51,6 +51,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
         String initials= String.valueOf(contact.getName().charAt(0));
         holder.Initials.setText(initials.toUpperCase());
 
+
         //holder.Editbtn = holder.itemView.findViewById(R.id.editbtn);
         // Assuming imageList is an ArrayList or an array of image resource IDs
 
@@ -75,24 +76,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
 
             }
         });
-        holder.NameDisplay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent updateIntent = new Intent(view.getContext(),UpdateContact.class);
-                //intent.putExtra("imageview",contact.getPhoto());
-                //String initials= String.valueOf(contact.getName().charAt(0));
-                updateIntent.putExtra("name",contact.getName());
-                updateIntent.putExtra("phno",contact.getPhoneNumber());
-                //intent.putExtra("Initial",initials);
-                updateIntent.putExtra("circle",contact.getCircle());
-                updateIntent.putExtra("nickname",contact.getnickname());
-                updateIntent.putExtra("id",contact.getId());
-
-                view.getContext().startActivity(updateIntent);
-
-            }
-        });
-
 
     }
 //    int positionToUpdate = Contact.class.getModifiers();/* the position of the item to update */;
@@ -100,7 +83,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
 //    itemToUpdate.setPropertyToUpdate(newValue);
 //
 //   MyAdapter.notifyItemChanged(positionToUpdate);
-
 
 
     @Override
@@ -120,12 +102,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
             CircleDisplay=itemView.findViewById(R.id.circle);
             Initials=itemView.findViewById(R.id.initials);
             //NewContactPg =itemView.findViewById(R.id.newContactPg);
-
-
-
-
-
-
+            
         }
     }
 }

@@ -67,7 +67,7 @@ public class UpdateContact extends AppCompatActivity {
         String newname = intent.getStringExtra("name");
         // display the string into textView
         name1.setText(newname);
-        String newphone = intent.getStringExtra("phno");
+        String newphone = intent.getStringExtra("phonenum");
         phone1.setText(newphone);
 
         String newcircle = intent.getStringExtra("circle");

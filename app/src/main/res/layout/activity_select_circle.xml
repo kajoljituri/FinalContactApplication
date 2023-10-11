@@ -1,9 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SelectCircle">
+    android:layout_height="wrap_content"
+    tools:context=".NewContact"
+    android:id="@+id/newContactPg">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="Update Contact"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:id="@+id/heading"
+        android:background="#A1DDF6">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/heading">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/subtitle"
+            android:gravity="start"
+            android:text="Select one or more circle you want to send the message"
+            android:textSize="22dp"
+            android:layout_marginBottom="10dp">
+        </TextView>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@+id/heading">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/c1"
+            android:text="1 st Circle"
+            android:textSize="28dp"
+            android:layout_marginBottom="8dp">
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contact1"
+            android:text="no.of contacts"
+            android:textSize="18dp"
+            android:layout_marginBottom="10dp">
+
+        </TextView>
+        <View
+            android:id="@+id/view1"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/c2"
+            android:text="2 nd Circle"
+            android:textSize="28dp"
+            android:layout_marginBottom="8dp">
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contact2"
+            android:text="no.of contacts"
+            android:textSize="18dp"
+            android:layout_marginBottom="10dp">
+
+        </TextView>
+        <View
+            android:id="@+id/view2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <TextView
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:text="1 st Circle"
+            android:textSize="28dp"
+            android:layout_marginBottom="8dp">
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="no.of contacts"
+            android:textSize="18dp"
+            android:layout_marginBottom="10dp">
+
+        </TextView>
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+    </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <CheckBox
+                    android:id="@+id/Box1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                   />
+                <CheckBox
+                    android:id="@+id/Box3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"/>
+                <CheckBox
+                    android:id="@+id/Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="84dp"/>
+            </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+</LinearLayout>
+</RelativeLayout>
+
+
+
