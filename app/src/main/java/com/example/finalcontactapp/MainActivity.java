@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -64,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
 
         dbManager =new DBManager(this);
         dbManager.open();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("myPreference",0);
+        boolean isFirstTime = sharedPreferences.getBoolean("isFirstTime",true);
+        if (isFirstTime){
+            checkPermission(android.Manifest.permission.READ_CONTACTS, READ_CONTACTS_PERMISSIONS_REQUEST);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isFirstTime",false);
+            editor.apply();
+        }
+
         Cursor cursor = dbManager.fetch();
         for (cursor.moveToLast(); !cursor.isBeforeFirst(); cursor.moveToPrevious()){
             System.out.println("Inside cursor-");
@@ -73,9 +84,11 @@ public class MainActivity extends AppCompatActivity {
             String circle = cursor.getString(cursor.getColumnIndexOrThrow("circle"));
             String phnum = cursor.getString(cursor.getColumnIndexOrThrow("phnum"));
             long id = cursor.getLong(cursor.getColumnIndexOrThrow("id"));
-//            Log.v("TAGGGG", String.valueOf(id));
+
             Contact contact = new Contact(name,nickname,circle,phnum);
+            contact.setId(id);
             contacts.add(contact);
+
 
 
 
@@ -181,7 +194,11 @@ public class MainActivity extends AppCompatActivity {
             ContactsContract.Contacts.DISPLAY_NAME,
             ContactsContract.CommonDataKinds.Phone.NUMBER
     };
-
+    private void addContactsToDB(ArrayList<Contact> contacts){
+        for (Contact c : contacts){
+            dbManager.insert(c);
+        }
+    }
     private void getContactList() {
         ContentResolver cr = getContentResolver();
 
@@ -205,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("hvy", "onCreaterrView  Phone Number: name = " + name
                                 + " No = " + number);
                     }
+                    addContactsToDB(contacts);
                 }
             } finally {
                 cursor.close();

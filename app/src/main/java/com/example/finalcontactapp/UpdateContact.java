@@ -131,8 +131,8 @@ public class UpdateContact extends AppCompatActivity {
                 Contact contact = new Contact(name,phNum, nickname, circle);
                 // dbManager.updateTable(contact.getId(), contact.getName(), contact.getnickname(), contact.getCircle(), contact.getPhoneNumber());
                 dbManager.updateTable(ID,name,phNum,nickname,circle);
-                Log.v("TAG123", dbManager.toString());
-                Log.v("Tag789", String.valueOf(ID));
+
+                Log.v("Tag123", String.valueOf(ID));
 
                 Toast.makeText(UpdateContact.this, "Updated contact!", Toast.LENGTH_SHORT).show();
                 Intent backIntent = new Intent(getApplicationContext(), MainActivity.class);

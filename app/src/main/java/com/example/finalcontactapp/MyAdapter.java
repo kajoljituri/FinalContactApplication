@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -46,6 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
     public void onBindViewHolder(@NonNull MyAdapter.MyViewAdapter holder, int position) {
         Contact contact=contactlist.get(position);
         //holder.imageView.setImageResource(contact.getPhoto());
+
         holder.NameDisplay.setText(contact.getName());
         holder.CircleDisplay.setText(String.valueOf(contact.getCircle()));
         String initials= String.valueOf(contact.getName().charAt(0));
@@ -58,19 +60,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
 //        int imageResource = (int) imageList.get(position); // Replace 'position' with the appropriate index
 //        holder.Editbtn.setImageResource(imageResource);
 
-        holder.NameDisplay.setOnClickListener(new View.OnClickListener() {
+        holder.contactitem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(),ContactProfile.class);
                 //intent.putExtra("imageview",contact.getPhoto());
-                String initials= String.valueOf(contact.getName().charAt(0));
+               // String initials= String.valueOf(contact.getName().charAt(0));
 
                 intent.putExtra("name",contact.getName());
                 intent.putExtra("phno",contact.getPhoneNumber());
                 //intent.putExtra("Initial",initials);
                 intent.putExtra("circle",contact.getCircle());
                 intent.putExtra("nickname",contact.getnickname());
-               // intent.putExtra("id",contact.getId());
+                intent.putExtra("id",contact.getId());
 
                 view.getContext().startActivity(intent);
 
@@ -94,10 +96,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewAdapter> {
     public class MyViewAdapter extends RecyclerView.ViewHolder {
         TextView NameDisplay,CircleDisplay,Initials;
         //RelativeLayout NewContactPg;
-
+        LinearLayout contactitem;
 
         public MyViewAdapter(@NonNull View itemView) {
             super(itemView);
+            contactitem=itemView.findViewById(R.id.contactItem);
             NameDisplay = itemView.findViewById(R.id.namedisplay);
             CircleDisplay=itemView.findViewById(R.id.circle);
             Initials=itemView.findViewById(R.id.initials);

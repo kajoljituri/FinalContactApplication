@@ -47,6 +47,16 @@ public class DBManager {
         return cursorVar;
     }
 
+    public Cursor fetch1() {
+        String[] tablecolumns = new String[] { DatabaseHelper.ID, DatabaseHelper.NAME, DatabaseHelper.CIRCLE, DatabaseHelper.NICKNAME, DatabaseHelper.PHONENUMBER};
+        Cursor cursorVar = database.query(DatabaseHelper.TABLE_NAME, tablecolumns, null, null, null, null, null);
+        if (cursorVar != null) {
+            cursorVar.moveToFirst();
+        }
+
+        return cursorVar;
+    }
+
     public int updateTable(long id, String name, String phnum,String nickname,String circle) {
         ContentValues contentValuesVar = new ContentValues();
         contentValuesVar.put(DatabaseHelper.NAME, name);

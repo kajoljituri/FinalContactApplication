@@ -80,10 +80,11 @@ public class ContactProfile extends AppCompatActivity {
                 String number =getIntent().getExtras().getString("phno");
                 update.putExtra("phonenum",number);
 
-                long id =getIntent().getLongExtra("id",1);
+                long id =getIntent().getExtras().getLong("id");
                 update.putExtra("id",id);
 
-                view.getContext().startActivity(update);
+                //view.getContext().startActivity(update);
+                startActivity(update);
 
             }
         });
