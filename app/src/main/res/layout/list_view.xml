@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/contactItem">
+
+    <TextView
+        android:id="@+id/initials"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_vertical"
+        android:text="AD"
+        android:textSize="36dp"
+        android:gravity="center"
+        android:background="@drawable/profile">
+
+    </TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/namedisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="25dp"
+            android:paddingStart="8dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:text="1st"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:paddingRight="20dp"
+            android:paddingVertical="4dp">
+
+        </TextView>
+    </LinearLayout>
+</LinearLayout>

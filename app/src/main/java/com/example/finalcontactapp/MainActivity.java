@@ -66,17 +66,18 @@ public class MainActivity extends AppCompatActivity {
         dbManager =new DBManager(this);
         dbManager.open();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("myPreference",0);
-        boolean isFirstTime = sharedPreferences.getBoolean("isFirstTime",true);
-        if (isFirstTime){
+        SharedPreferences sharedPreferences = getSharedPreferences("myPreference",MODE_PRIVATE);
+        boolean isFirstTime= sharedPreferences.getBoolean("isFirstTime",false);
+        if (!isFirstTime){
             checkPermission(android.Manifest.permission.READ_CONTACTS, READ_CONTACTS_PERMISSIONS_REQUEST);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isFirstTime",false);
             editor.apply();
         }
 
-        Cursor cursor = dbManager.fetch();
-        for (cursor.moveToLast(); !cursor.isBeforeFirst(); cursor.moveToPrevious()){
+        Cursor cursor = dbManager.fetch(null);
+        for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+
             System.out.println("Inside cursor-");
            // int id = cursorObject.getInt(cursorObject.getColumnIndexOrThrow("id"));
             String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         sendmessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent msg = new Intent(getApplicationContext(),SendMessage.class);
+                Intent msg = new Intent(getApplicationContext(),SelectCircle.class);
                 startActivity(msg);
 
             }
@@ -152,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             Toast.makeText(MainActivity.this, "Permission already granted", Toast.LENGTH_SHORT).show();
-            getContactList();
+//            getContactList();
         }
     }
 
@@ -194,11 +195,7 @@ public class MainActivity extends AppCompatActivity {
             ContactsContract.Contacts.DISPLAY_NAME,
             ContactsContract.CommonDataKinds.Phone.NUMBER
     };
-    private void addContactsToDB(ArrayList<Contact> contacts){
-        for (Contact c : contacts){
-            dbManager.insert(c);
-        }
-    }
+
     private void getContactList() {
         ContentResolver cr = getContentResolver();
 
@@ -217,12 +214,13 @@ public class MainActivity extends AppCompatActivity {
                     number = number.replace(" ", "");
                     if (!mobileNoSet.contains(number)) {
                         //Name,Nickname,Circle,Phonenum,initials Integer.parseInt
-                        contacts.add(new Contact(name,name,"3",number));
+                        Contact c = new Contact(name,name,"3",number);
+                        dbManager.insert(c);
                         mobileNoSet.add(number);
                         Log.d("hvy", "onCreaterrView  Phone Number: name = " + name
                                 + " No = " + number);
                     }
-                    addContactsToDB(contacts);
+
                 }
             } finally {
                 cursor.close();

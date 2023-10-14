@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    tools:context=".SelectCircle"
     android:id="@+id/selectPg">
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/contact1"
+                    android:id="@+id/NoOfContactCircle1"
                     android:text="no.of contacts"
                     android:textSize="18dp"
                     android:layout_marginBottom="10dp">
@@ -127,7 +128,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/contact2"
+                    android:id="@+id/NoOfContactCircle2"
                     android:text="no.of contacts"
                     android:textSize="18dp"
                     android:layout_marginBottom="10dp">
@@ -172,7 +173,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/c3"
-                    android:text="3 rd Circle"
+                    android:text="3rd Circle"
                     android:textSize="28dp"
                     android:layout_marginBottom="8dp">
 
@@ -180,7 +181,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/contact3"
+                    android:id="@+id/NoOfContactCircle3"
                     android:text="no.of contacts"
                     android:textSize="18dp"
                     android:layout_marginBottom="10dp">
